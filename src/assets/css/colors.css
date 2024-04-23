@@ -1,1 +1,11 @@
-@import './colors.css';
+:root {
+    --white: #ffffff;
+    --black: #343434;
+
+    --dark-gray: #5D6A75;
+    --gray: #A5A5A5;
+    --light-gray: #CCCCCC;
+
+    --blue: #1187F4;
+    --light-blue: #E5F3FF;
+}
