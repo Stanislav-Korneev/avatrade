@@ -3,7 +3,7 @@
     :type
     :id
     :placeholder
-    :validator
+    :error
     @button-click="handleHidePassword"
   >
     <template v-slot:icon>
@@ -33,10 +33,10 @@ defineProps({
     type: String,
     default: 'Password',
   },
-  validator: {
-    type: Function,
-    default: () => ''
-  },
+  error: {
+    type: String,
+    default: '',
+  }
 })
 
 const type = ref<string>('password');
@@ -44,5 +44,4 @@ const type = ref<string>('password');
 function handleHidePassword(): void {
   type.value = type.value === 'password' ? 'text' : 'password';
 }
-
 </script>
