@@ -15,6 +15,7 @@ import AppIconButton from '@/components/general/AppIconButton.vue'
 import SocialGoogleIcon from '@/components/icons/SocialGoogleIcon.vue'
 import SocialFacebookIcon from '@/components/icons/SocialFacebookIcon.vue'
 import SocialAppleIcon from '@/components/icons/SocialAppleIcon.vue'
+import { useAuthStore } from '@/stores/auth'
 
 const socials = {
   google: SocialGoogleIcon,
@@ -22,8 +23,11 @@ const socials = {
   apple: SocialAppleIcon
 }
 
+const store = useAuthStore();
+
 function handleSocialButton(platform: string): void {
   console.log(`so you're lazy, aren't you? Go on then, use your ${platform} instead`)
+  store.login();
 }
 </script>
 
