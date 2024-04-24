@@ -25,7 +25,6 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   const store = useAuthStore();
-  console.log('path', to.path)
   if(to.path === '/') next({ path: '/login' });
   if(to.path === '/login' && store.isLoggedIn) next({ path: '/deposit' })
   else if(to.meta.requiresAuth && !store.isLoggedIn) next({ path: '/login' })
