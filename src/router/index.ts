@@ -25,8 +25,9 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   const store = useAuthStore();
-  if(to.name === 'login' && store.isLoggedIn) next({ name: 'deposit' })
-  else if(to.meta.requiresAuth && !store.isLoggedIn) next({ name: 'login' })
+  if(to.path === '/') next({ path: '/login' });
+  if(to.path === '/login' && store.isLoggedIn) next({ path: '/deposit' })
+  else if(to.meta.requiresAuth && !store.isLoggedIn) next({ path: '/login' })
   else next()
 })
 
