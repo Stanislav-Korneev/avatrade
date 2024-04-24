@@ -53,6 +53,6 @@ const currentTab = computed<typeof SignUpTab | typeof LoginTab>(() => {
 }
 
 .tabs {
-  margin-top: 16px;
+  margin-top: 30px;
 }
 </style>

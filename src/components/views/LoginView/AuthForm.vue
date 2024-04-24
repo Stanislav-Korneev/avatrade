@@ -22,7 +22,7 @@
     </app-button>
   </form>
   <div class="divider">
-    <hr><span>or</span><hr>
+    <hr><span>Or</span><hr>
   </div>
   <social-login-panel />
 </template>
