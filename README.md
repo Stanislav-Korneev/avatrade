@@ -1,5 +1,7 @@
 # avatrade
 
+Project is [deployed via github pages](https://stanislav-korneev.github.io/avatrade/)
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
