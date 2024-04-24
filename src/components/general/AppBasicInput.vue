@@ -8,37 +8,23 @@
       :placeholder="placeholder"
       :type="type"
       v-model="inputValue"
-      @blur="validateSelf"
-      @input="errorText = ''"
     >
-    <span v-if="errorText" class="error-text">
-      {{ errorText }}
+    <span v-if="error" class="error-text">
+      {{ error }}
     </span>
     <slot name="button" />
   </div>
 </template>
 
 <script setup lang="ts">
-
-import { ref } from 'vue'
-
-const props = defineProps({
+defineProps({
   type: String,
   id: String,
   placeholder: String,
-  validator: {
-    type: Function,
-    default: () => ''
-  },
+  error: String,
 })
 
-const errorText = ref<string>('');
-
 const inputValue = defineModel();
-
-function validateSelf(): void {
-  errorText.value = props.validator(inputValue.value);
-}
 </script>
 
 <style scoped>
