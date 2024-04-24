@@ -37,8 +37,6 @@ const errorText = ref<string>('');
 const inputValue = defineModel();
 
 function validateSelf(validator: Function): void {
-  const result = validator(inputValue.value);
-  console.log('result', result)
   errorText.value = validator(inputValue.value);
 }
 </script>
