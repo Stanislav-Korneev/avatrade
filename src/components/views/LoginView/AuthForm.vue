@@ -28,10 +28,10 @@
 </template>
 
 <script setup lang="ts">
-import SocialLoginPanel from '@/components/LoginView/SocialLoginPanel.vue'
-import AppBasicInput from '@/components/general/AppBasicInput.vue'
-import PasswordInput from '@/components/general/PasswordInput.vue'
-import AppButton from '@/components/general/AppButton.vue'
+import SocialLoginPanel from '@/components/views/LoginView/SocialLoginPanel.vue'
+import AppBasicInput from '@/components/general/form/AppBasicInput.vue'
+import PasswordInput from '@/components/general/form/PasswordInput.vue'
+import AppButton from '@/components/general/buttons/AppButton.vue'
 import MailIcon from '@/components/icons/MailIcon.vue'
 import { inputIsEmpty } from '@/helpers/InputValidators'
 import { computed, ref } from 'vue'

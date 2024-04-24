@@ -18,11 +18,11 @@
 </template>
 
 <script setup lang="ts">
-import AppBasicInput from '@/components/general/AppBasicInput.vue'
+import AppBasicInput from '@/components/general/form/AppBasicInput.vue'
 import PasswordIcon from '@/components/icons/PasswordIcon.vue'
 import HidePasswordIcon from '@/components/icons/HidePasswordIcon.vue'
 import { ref } from 'vue'
-import AppIconButton from '@/components/general/AppIconButton.vue'
+import AppIconButton from '@/components/general/buttons/AppIconButton.vue'
 
 defineProps({
   id: {

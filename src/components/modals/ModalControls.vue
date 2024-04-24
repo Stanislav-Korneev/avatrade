@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import AppIconButton from '@/components/general/AppIconButton.vue'
+import AppIconButton from '@/components/general/buttons/AppIconButton.vue'
 import SupportIcon from '@/components/icons/SupportIcon.vue'
 import CloseIcon from '@/components/icons/CloseIcon.vue'
 

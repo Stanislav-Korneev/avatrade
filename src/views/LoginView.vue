@@ -17,9 +17,9 @@
 import { computed, ref } from 'vue'
 import ModalControls from '@/components/modals/ModalControls.vue'
 import AppTabsPanel from '@/components/general/AppTabsPanel.vue'
-import SignUpTab from '@/components/LoginView/SignUpTab.vue'
-import LoginTab from '@/components/LoginView/LoginTab.vue'
-import AuthForm from '@/components/LoginView/AuthForm.vue'
+import SignUpTab from '@/components/views/LoginView/SignUpTab.vue'
+import LoginTab from '@/components/views/LoginView/LoginTab.vue'
+import AuthForm from '@/components/views/LoginView/AuthForm.vue'
 
 const tabs = [
   {name: 'Sign-Up', id: 'sign'},

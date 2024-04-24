@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import AppIconButton from '@/components/general/AppIconButton.vue'
+import AppIconButton from '@/components/general/buttons/AppIconButton.vue'
 import SocialGoogleIcon from '@/components/icons/SocialGoogleIcon.vue'
 import SocialFacebookIcon from '@/components/icons/SocialFacebookIcon.vue'
 import SocialAppleIcon from '@/components/icons/SocialAppleIcon.vue'
