@@ -1,6 +1,6 @@
 <template>
   <div class="app-input">
-    <label :for="id">
+    <label v-if="$slots.icon" :for="id">
       <slot name="icon" />
     </label>
     <input
@@ -12,7 +12,9 @@
     <span v-if="error" class="error-text">
       {{ error }}
     </span>
-    <slot name="button" />
+    <div class="button">
+      <slot name="button" />
+    </div>
   </div>
 </template>
 
@@ -30,9 +32,8 @@ const inputValue = defineModel();
 <style scoped>
 .app-input {
   position: relative;
-  display: grid;
+  display: flex;
   align-items: center;
-  grid-template-columns: 44px 1fr 44px;
   width: 100%;
   min-height: 56px;
   border: 1px solid var(--light-gray);
@@ -49,11 +50,13 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 44px;
 }
 
 input {
   width: 100%;
   height: 100%;
+  margin: 0 4px;
   padding: 0 6px;
   font-size: 16px;
   color: var(--dark-gray);
@@ -66,5 +69,9 @@ input {
   right: 10px;
   font-size: 14px;
   color: var(--red);
+}
+
+.button {
+  margin-right: 10px;
 }
 </style>
