@@ -76,30 +76,25 @@ function handleFormSubmit(): void {
 <style scoped>
 form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr auto;
-  gap: 20px 0;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 8px;
+  grid-row-gap: 16px;
   width: 360px;
   margin-top: 40px;
 }
 
 .card-number-input {
-  grid-row: 1 / span 1;
-  grid-column: 1 / span 2;
+  grid-area: 1 / 1 / 2 / 3;
 }
-
 .expire-date-input {
-  grid-row: 2 / span 1;
-  grid-column: 1 / span 1;
+  grid-area: 2 / 1 / 3 / 2;
 }
 .security-code-input {
-  grid-row: 2 / span 1;
-  grid-column: 2 / span 2;
+  grid-area: 2 / 2 / 3 / 3;
 }
-
 .submit-button {
-  grid-row: 3 / span 1;
-  grid-column: 1 / span 2;
+  grid-area: 3 / 1 / 4 / 3;
 }
 
 @media (max-width: 380px) {
