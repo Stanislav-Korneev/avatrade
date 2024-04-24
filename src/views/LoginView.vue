@@ -1,12 +1,67 @@
 <template>
   <div class="main">
-    <h1>This is an main page</h1>
-    <button @click="store.login()">login</button>
-    <button @click="store.logout()">logout</button>
+    <modal-controls class="modal-controls" />
+    <div class="content">
+      <h1>Sign-Up, <b>It's Free!</b></h1>
+      <app-tabs-panel :tabs class="tabs" v-model="activeTabId" />
+      <keep-alive>
+        <component :is="currentTab">
+          <auth-form :authMode="activeTabId" />
+        </component>
+      </keep-alive>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-  import {useAuthStore} from '@/stores/auth'
-  const store = useAuthStore()
+import { computed, ref } from 'vue'
+import ModalControls from '@/components/modals/ModalControls.vue'
+import AppTabsPanel from '@/components/general/AppTabsPanel.vue'
+import SignUpTab from '@/components/LoginView/SignUpTab.vue'
+import LoginTab from '@/components/LoginView/LoginTab.vue'
+import AuthForm from '@/components/LoginView/AuthForm.vue'
+
+const tabs = [
+  {name: 'Sign-Up', id: 'sign'},
+  {name: 'Login', id: 'login'},
+]
+
+const activeTabId = ref<string>(tabs[0].id)
+const currentTab = computed<typeof SignUpTab | typeof LoginTab>(() => {
+  return activeTabId.value === 'sign' ? SignUpTab : LoginTab;
+})
 </script>
+
+<style scoped>
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 360px;
+}
+
+.modal-controls {
+  margin-left: auto;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--dark-blue);
+}
+
+b {
+  font-weight: 800;
+}
+
+.tabs {
+  margin-top: 16px;
+}
+</style>
