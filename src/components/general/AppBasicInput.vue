@@ -8,7 +8,7 @@
       :placeholder="placeholder"
       :type="type"
       v-model="inputValue"
-      @blur="() => validateSelf(validator)"
+      @blur="validateSelf"
       @input="errorText = ''"
     >
     <span v-if="errorText" class="error-text">
@@ -22,7 +22,7 @@
 
 import { ref } from 'vue'
 
-defineProps({
+const props = defineProps({
   type: String,
   id: String,
   placeholder: String,
@@ -36,8 +36,8 @@ const errorText = ref<string>('');
 
 const inputValue = defineModel();
 
-function validateSelf(validator: Function): void {
-  errorText.value = validator(inputValue.value);
+function validateSelf(): void {
+  errorText.value = props.validator(inputValue.value);
 }
 </script>
 
