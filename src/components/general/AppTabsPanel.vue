@@ -5,6 +5,9 @@
     :key="i"
     :class="['tab', tab.id === activeTabId ? 'active' : '']"
     @click="() => handleTabPick(tab.id)"
+    @keydown.enter="() => handleTabPick(tab.id)"
+    @keydown.space="() => handleTabPick(tab.id)"
+    tabindex="0"
   >
     {{tab.name}}
   </div>
