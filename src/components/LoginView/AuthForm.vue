@@ -17,8 +17,8 @@
       :error="passwordError"
       @focusout="validatePassword"
     />
-    <app-button type="submit" color="blue" style="margin-top: 10px">
-      Create My Account
+    <app-button type="submit" color="blue" class="submit-button">
+      {{ submitButtonText }}
     </app-button>
   </form>
   <div class="divider">
@@ -34,7 +34,13 @@ import PasswordInput from '@/components/general/PasswordInput.vue'
 import AppButton from '@/components/general/AppButton.vue'
 import MailIcon from '@/components/icons/MailIcon.vue'
 import { inputIsEmpty } from '@/helpers/InputValidators'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { useAuthStore } from '@/stores/auth'
+
+const props = defineProps({
+  authMode: String,
+})
+const store = useAuthStore();
 
 const emailValue = ref<string>('');
 const emailError = ref<string>('');
@@ -42,11 +48,16 @@ const emailError = ref<string>('');
 const passwordValue = ref<string>('');
 const passwordError = ref<string>('');
 
+const submitButtonText = computed<string>(() => {
+  return props.authMode === 'sign' ? 'Create My Account' : 'Login';
+})
+
 function handleFormSubmit() {
   const isEmailValid = validateEmail();
   const isPasswordValid = validatePassword();
 
   if(!isEmailValid || !isPasswordValid) return;
+  store.login();
   console.log('login: ', emailValue.value);
   console.log('password: ', passwordValue.value);
 }
@@ -60,7 +71,6 @@ function validatePassword(): boolean {
   passwordError.value = inputIsEmpty(passwordValue.value);
   return !passwordError.value.length;
 }
-
 </script>
 <style scoped>
 form {
@@ -88,6 +98,11 @@ form {
   display: grid;
   grid-template-rows: 1fr 1fr;
   gap: 20px;
-  margin-top: 20px;
+  margin-top: 40px;
+}
+
+.submit-button {
+  width: 240px;
+  margin: 10px auto 0;
 }
 </style>
