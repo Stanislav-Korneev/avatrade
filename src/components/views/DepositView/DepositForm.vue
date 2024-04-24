@@ -101,4 +101,10 @@ form {
   grid-row: 3 / span 1;
   grid-column: 1 / span 2;
 }
+
+@media (max-width: 380px) {
+  form {
+    width: 300px;
+  }
+}
 </style>

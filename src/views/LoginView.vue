@@ -55,4 +55,10 @@ const currentTab = computed<typeof SignUpTab | typeof LoginTab>(() => {
 .tabs {
   margin-top: 30px;
 }
+
+@media (max-width: 380px) {
+  .content {
+    width: 300px;
+  }
+}
 </style>
