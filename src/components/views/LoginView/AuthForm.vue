@@ -24,7 +24,7 @@
   <div class="divider">
     <hr><span>Or</span><hr>
   </div>
-  <social-login-panel />
+  <social-login-panel class="social-login-panel" />
 </template>
 
 <script setup lang="ts">
@@ -104,5 +104,9 @@ form {
 .submit-button {
   width: 240px;
   margin: 10px auto 0;
+}
+
+.social-login-panel {
+  margin-top: 20px;
 }
 </style>

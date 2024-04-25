@@ -18,7 +18,7 @@ function handlePartnerPromo(): void {
 
 <style scoped>
 .disclaimer {
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 12px;
   text-align: center;
   color: var(--dark-gray);
