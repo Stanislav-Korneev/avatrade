@@ -27,11 +27,13 @@ function handlePartnerPromo(): void {
 .partner-promo {
   margin-top: 30px;
   font-size: 16px;
+  font-weight: 400;
 }
 
 .action-text {
   color: var(--dark-blue);
   text-decoration: underline;
   cursor: pointer;
+  font-weight: 700;
 }
 </style>
