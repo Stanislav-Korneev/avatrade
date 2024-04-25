@@ -97,13 +97,13 @@ hr {
 form {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: 20px;
+  gap: 30px;
   margin-top: 40px;
 }
 
 .submit-button {
   width: 240px;
-  margin: 10px auto 0;
+  margin: 0 auto;
 }
 
 .social-login-panel {
