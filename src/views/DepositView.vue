@@ -6,7 +6,9 @@
         logout
       </app-button>
     </div>
-    <deposit-form />
+    <app-content-wrapper>
+      <deposit-form class="form" />
+    </app-content-wrapper>
   </div>
 </template>
 
@@ -15,6 +17,7 @@
   import AppButton from '@/components/general/buttons/AppButton.vue'
   import AppHeader from '@/components/general/AppHeader.vue'
   import DepositForm from '@/components/views/DepositView/DepositForm.vue'
+  import AppContentWrapper from '@/components/general/layout/AppContentWrapper.vue'
   const store = useAuthStore()
 
   function handleLogout(): void {
@@ -28,15 +31,21 @@
   grid-template-areas: "left mid right";
   align-items: center;
 }
+
 .header-text {
   display: flex;
   justify-content: center;
   align-items: center;
   grid-area: mid;
 }
+
 .logout-button {
   min-width: 80px;
   width: 80px;
   grid-area: right;
+}
+
+.form {
+  margin-top: 40px;
 }
 </style>

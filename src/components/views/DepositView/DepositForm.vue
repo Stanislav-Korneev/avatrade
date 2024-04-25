@@ -80,8 +80,7 @@ form {
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 8px;
   grid-row-gap: 16px;
-  width: 360px;
-  margin-top: 40px;
+  width: 100%;
 }
 
 .card-number-input {
@@ -95,11 +94,5 @@ form {
 }
 .submit-button {
   grid-area: 3 / 1 / 4 / 3;
-}
-
-@media (max-width: 380px) {
-  form {
-    width: 300px;
-  }
 }
 </style>

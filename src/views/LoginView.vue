@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <modal-controls class="modal-controls" />
-    <div class="content">
+    <app-content-wrapper>
       <app-header header="<h1>Sign-Up, <b>It's Free!</b></h1>" />
       <app-tabs-panel :tabs class="tabs" v-model="activeTabId" />
       <keep-alive>
@@ -9,7 +9,7 @@
           <auth-form :authMode="activeTabId" />
         </component>
       </keep-alive>
-    </div>
+    </app-content-wrapper>
   </div>
 </template>
 
@@ -21,6 +21,7 @@ import SignUpTab from '@/components/views/LoginView/SignUpTab.vue'
 import LoginTab from '@/components/views/LoginView/LoginTab.vue'
 import AuthForm from '@/components/views/LoginView/AuthForm.vue'
 import AppHeader from '@/components/general/AppHeader.vue'
+import AppContentWrapper from '@/components/general/layout/AppContentWrapper.vue'
 
 const tabs = [
   {name: 'Sign-Up', id: 'sign'},
@@ -41,24 +42,11 @@ const currentTab = computed<typeof SignUpTab | typeof LoginTab>(() => {
   width: 100%;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 360px;
-}
-
 .modal-controls {
   margin-left: auto;
 }
 
 .tabs {
   margin-top: 30px;
-}
-
-@media (max-width: 380px) {
-  .content {
-    width: 300px;
-  }
 }
 </style>
